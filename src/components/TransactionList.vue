@@ -8,7 +8,7 @@
         }
     })
 
-    const emit= defineEmits(['transactionDeleted'])
+    const emit = defineEmits(['transactionDeleted'])
 
     const deletTransaction = (id) => {
         emit('transactionDeleted',id)
@@ -20,7 +20,7 @@
     <ul id="list" class="list">
         <li v-for="x in transactions" v-bind:key="x.id"
             v-bind:class="x.amount < 0 ? 'minus': 'plus'">
-            {{ x.text }} <span>${{ x.amount }}</span>
+            {{ x.text }} <span> ${{ x.amount }}</span>
             <button @click="deleteTransaction(x.id)" class="delete-btn">X</button>
         </li>
     </ul>
